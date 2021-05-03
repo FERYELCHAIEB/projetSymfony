@@ -29,30 +29,35 @@
 
   <table style="width:100% " >
   <thead>
-  <tr>
-{% for k,v in Agences %} 
-  
-    <th>{{k}}</th>
-
-{% endfor %}
+     <th>id</th>
+<th>Nom</th>
+<th>Tel agence</th>
+<th>Adresseville</th>
 <th>Actions</th>
-</tr>
+
 </thead>
  
 
        
         
   <tbody>
+  {% for agence in agences %} 
   <tr>
-{% for k,v in Agences %} 
-  
-    <td>{{v}}</td>
 
-{% endfor %}
+  
+    
+    <td>{{agence.id}}</td>
+    <td>{{agence.nom}}</td>
+    <td>{{agence.telAgence}}</td>
+     <td>{{agence.adresseVille}}</td>  
+     
+
+
 <td><a href={{path('consulterAgence',{'id':1})}}>Voir</a>
     <a href={{path('modifierAgence',{'id':1})}}>Modifier</a>
     <a href={{path('supprimerAgence',{'id':1})}}>Supprimer</a> </td>
 </tr>
+{% endfor %}
         <tbody>
   </table>
  
@@ -65,26 +70,32 @@
   <h3><a href={{path('ajouterVoiture')}}>Ajouter</a></h3>
   <table  style="width:100%">
 <thead>
-  <tr>
-{% for k,v in Voiture %} 
-  
-    <th>{{k}}</th>
-
-{% endfor %}
-<th>Actions</th>
-</tr>
+  <th>id</th>
+<th>Marque</th>
+<th>Couleur</th>
+<th>Description</th>
+<th>Nombre de place</th>
+<th>ACTIONS</th>
 </thead>
     <tbody>
+  {% for voiture in voitures %} 
   <tr>
-{% for k,v in Voiture %} 
-  
-    <td>{{v}}</td>
 
-{% endfor %}
-<td>
-    <a href={{path('modifierVoiture',{'id':1})}}>Modifier</a>
-    <a href={{path('supprimerVoiture',{'id':1})}}>Supprimer</a> </td>
+  
+    
+    <td>{{voiture.id}}</td>
+    <td>{{voiture.Marque}}</td>
+    <td>{{voiture.couleur}}</td>
+     <td>{{voiture.description}}</td>  
+      <td>{{voiture.nbrplace}}</td>
+      
+     
+<td><a href={{path('modifierVoiture',{'mat':'200TU1710'})}}>Modifier</a>
+    <a href={{path('supprimerVoiturebymat',{'mat':'200TU1710'})}}>Supprimer</a> </td>
+
+
 </tr>
+{% endfor %}
         <tbody>   
   </table>
   

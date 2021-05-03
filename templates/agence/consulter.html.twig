@@ -1,5 +1,14 @@
 <div>
 <h1>
 consulter agence<h1>
+   
+<div class="example-wrapper">
+    <h2>AGENCES</h2>
+<ul>
+{% for agence in agences %}
+<li>{{ agence.nom|e }} {{ agence.telagence|e }}  {{ agence.adresseville|e }}</li>
+{% endfor %}
+</ul>
+</div>
 <button type="button" class="btn btn-primary" ><a href={{path('admin')}}>back</a></button>
 </div>
